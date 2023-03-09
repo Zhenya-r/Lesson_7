@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 3</title>
+</head>
+
+<body>
+   <a href="../index.html">Назад до задач</a>
+   <p>Створити окремі функції, які для 4 чисел знаходять:</p>
+   <ol>
+      <li>
+         <p>Cуму</p>
+      </li>
+      <li>
+         <p>Добуток</p>
+      </li>
+      <li>
+         <p>Середнє арифметичне</p>
+      </li>
+      <li>
+         <p>Мінімальне значення</p>
+      </li>
+   </ol>
+   <script>
+      const firstNumber = parseFloat(prompt('Введіть перше число'))
+      const secondNumber = parseFloat(prompt('Введіть друге число'))
+      const thirdNumber = parseFloat(prompt('Введіть третє число'))
+      const fourthNumber = parseFloat(prompt('Введіть четверте число'))
+      function getSum() {
+         let sum = 0;
+         for (let i = 0; i < arguments.length; i++) {
+            sum += arguments[i]
+         }
+         return sum
+      }
+      function getIncrease() {
+         let increase = arguments[0];
+         for (let i = 1; i < arguments.length; i++) {
+            increase *= arguments[i]
+         }
+         return increase
+      }
+      function getArithmeticMean() {
+         let arithmeticMean = 0;
+         for (let i = 0; i < arguments.length; i++) {
+            arithmeticMean += arguments[i]
+         }
+         arithmeticMean /= arguments.length
+         return arithmeticMean
+      }
+      function getMinNumber() {
+         const minNumber = Math.min(...arguments);
+         return minNumber;
+      }
+
+      const sumNumbers = getSum(firstNumber, secondNumber, thirdNumber, fourthNumber)
+      const increaseNumbers = getIncrease(firstNumber, secondNumber, thirdNumber, fourthNumber)
+      const arithmeticMean = getArithmeticMean(firstNumber, secondNumber, thirdNumber, fourthNumber)
+      const minNumber = getMinNumber(firstNumber, secondNumber, thirdNumber, fourthNumber)
+
+      document.write(`Сума = ${sumNumbers} <br>`)
+      document.write(`Добуток = ${increaseNumbers}<br>`)
+      document.write(`Середнє арифметичне = ${arithmeticMean}<br>`)
+      document.write(`Мінімальне значення = ${minNumber}<br>`)
+   </script>
+</body>
+
+</html>

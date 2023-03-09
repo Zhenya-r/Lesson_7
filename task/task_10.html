@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 10</title>
+</head>
+
+<body>
+   <a href="../index.html">Назад до задач</a>
+   <p>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.</p>
+
+   <script>
+      let counterPositiveTemperature = 0;
+      let sumPositiveTemperature = 0;
+      let userTemperatureData;
+
+      do {
+         userTemperatureData = parseFloat(prompt("Введіть показання температури"))
+         isPositiveTemperature(userTemperatureData)
+      } while (userTemperatureData || userTemperatureData === 0)
+
+      function isPositiveTemperature(data) {
+         if (data > 0) {
+            counterPositiveTemperature++
+            sumPositiveTemperature += counterPositiveTemperature
+         }
+      }
+
+      let avarageValuePositiveTemperature = sumPositiveTemperature / counterPositiveTemperature
+
+      document.write(`Середнє значення для додатних показів температури = ${avarageValuePositiveTemperature}`)
+   </script>
+</body>
+
+</html>

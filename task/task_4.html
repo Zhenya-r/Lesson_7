@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 4</title>
+</head>
+
+<body>
+   <a href="../index.html">Назад до задач</a>
+   <p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.</p>
+
+   <script>
+      const firstNumb = parseFloat(prompt('Введіть перше число'))
+      const secondNumb = parseFloat(prompt('Введіть друге число'))
+      const thirdNumb = parseFloat(prompt('Введіть третє число'))
+
+      function getEvenNumb(a, b, c) {
+         let counterEvenNumb = 0
+
+         if (!(a % 2)) counterEvenNumb++
+         if (!(b % 2)) counterEvenNumb++
+         if (!(c % 2)) counterEvenNumb++
+
+         return counterEvenNumb;
+      }
+      function getPositiveNumb(a, b, c) {
+         let counterPositiveNumb = 0
+
+         if (a > 0) counterPositiveNumb++
+         if (b > 0) counterPositiveNumb++
+         if (c > 0) counterPositiveNumb++
+
+         return counterPositiveNumb
+      }
+      function getNumbMoreThan_100(a, b, c) {
+         let counterNumbMoreThan_100 = 0
+
+         if (a > 100) counterNumbMoreThan_100++
+         if (b > 100) counterNumbMoreThan_100++
+         if (c > 100) counterNumbMoreThan_100++
+
+         return counterNumbMoreThan_100
+      }
+      const evenNumb = getEvenNumb(firstNumb, secondNumb, thirdNumb)
+      const positiveNumb = getPositiveNumb(firstNumb, secondNumb, thirdNumb)
+      const numbMoreThan_100 = getNumbMoreThan_100(firstNumb, secondNumb, thirdNumb)
+
+      document.write(`
+      Кількість парних чисел = ${evenNumb}<br>
+      Кількість додатних чисел = ${positiveNumb}<br>
+      Кількість чисел більших за 100 = ${numbMoreThan_100}<br>
+      `)
+   </script>
+</body>
+
+</html>
